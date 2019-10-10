@@ -13,7 +13,8 @@ const readFile = async path => {
     })
 }
 
-const PORT = 3000
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var HOST = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 const app = express()
 
 const addScore = (score, name) => {
